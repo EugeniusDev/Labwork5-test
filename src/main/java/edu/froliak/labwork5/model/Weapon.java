@@ -22,7 +22,7 @@ import java.util.Objects;
 @Builder
 @ToString
 @Document
-public class Weapon {
+public class Weapon extends AuditMetadata{
     @Id
     private String id;
     private String name;
