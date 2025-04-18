@@ -9,9 +9,11 @@ package edu.froliak.labwork5.model;
 */
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.*;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 @Data
@@ -22,12 +24,15 @@ import java.util.Objects;
 @Builder
 @ToString
 @Document
-public class Weapon extends AuditMetadata{
+public class Weapon {
     @Id
     private String id;
     private String name;
     private String code;
     private String description;
+
+    private LocalDateTime createdDate;
+    private List<LocalDateTime> updateDate;
 
     public Weapon(String description, String code, String name) {
         this.description = description;

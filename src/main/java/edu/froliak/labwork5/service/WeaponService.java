@@ -23,9 +23,27 @@ public class WeaponService {
 
     private List<Weapon> weapons = new ArrayList<>();
     {
-        weapons.add(new Weapon("1", "Assault Rifle", "001", "Infantry weapon"));
-        weapons.add(new Weapon("2", "Tank", "002", "It is very heavy"));
-        weapons.add(new Weapon("3", "FPV drone", "003", "Provider of rusoriz"));
+        Weapon assaultRifle = Weapon.builder()
+                .id("1")
+                .name("Assault Rifle")
+                .description("Infantry weapon")
+                .code("001")
+                .build();
+        Weapon tank = Weapon.builder()
+                .id("2")
+                .name("Tank")
+                .description("It is very heavy")
+                .code("002")
+                .build();
+        Weapon fpvDrone = Weapon.builder()
+                .id("3")
+                .name("FPV drone")
+                .description("Provider of rusoriz")
+                .code("003")
+                .build();
+        weapons.add(assaultRifle);
+        weapons.add(tank);
+        weapons.add(fpvDrone);
     }
 
     @PostConstruct

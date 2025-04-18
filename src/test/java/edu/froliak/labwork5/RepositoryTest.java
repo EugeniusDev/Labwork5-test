@@ -30,9 +30,24 @@ public class RepositoryTest {
 
     @BeforeEach
     void setUp() {
-        Weapon assaultRifle = new Weapon("1", "Assault Rifle", "001", "00sample description00");
-        Weapon tank = new Weapon("2", "Tank", "002", "00sample description00");
-        Weapon fpvDrone = new Weapon("3", "FPV drone", "003", "00sample description00");
+        Weapon assaultRifle = Weapon.builder()
+                .id("1")
+                .name("Assault Rifle")
+                .description("00sample description00")
+                .code("001")
+                .build();
+        Weapon tank = Weapon.builder()
+                .id("2")
+                .name("Tank")
+                .description("00sample description00")
+                .code("002")
+                .build();
+        Weapon fpvDrone = Weapon.builder()
+                .id("3")
+                .name("FPV drone")
+                .description("00sample description00")
+                .code("003")
+                .build();
         underTest.saveAll(List.of(assaultRifle, tank, fpvDrone));
     }
 
