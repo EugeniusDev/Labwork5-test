@@ -14,7 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Objects;
 
 @Data
 @NoArgsConstructor
@@ -31,10 +30,10 @@ public class Weapon {
     private String code;
     private String description;
 
-    private LocalDateTime createdDate;
-    private List<LocalDateTime> updateDate;
+    private LocalDateTime createDate;
+    private List<LocalDateTime> updateDates;
 
-    public Weapon(String description, String code, String name) {
+    public Weapon(String name, String code, String description) {
         this.description = description;
         this.code = code;
         this.name = name;

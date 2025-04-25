@@ -213,6 +213,6 @@ public class RepositoryTest {
                 .filter(d -> d.getName().equals("Axe"))
                 .findFirst().orElse(null);
         assertNotNull(axeFromDatabase);
-        assertNull(axeFromDatabase.getCreatedDate(), "AuditMetadata fields should not be set");
+        assertNull(axeFromDatabase.getCreateDate(), "AuditMetadata fields should not be set");
     }
 }

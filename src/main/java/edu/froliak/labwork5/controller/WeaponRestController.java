@@ -1,6 +1,8 @@
 package edu.froliak.labwork5.controller;
 
 import edu.froliak.labwork5.model.Weapon;
+import edu.froliak.labwork5.request.WeaponCreateRequest;
+import edu.froliak.labwork5.request.WeaponUpdateRequest;
 import edu.froliak.labwork5.service.WeaponService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -34,10 +36,18 @@ public class WeaponRestController {
     public Weapon insert(@RequestBody Weapon weapon) {
         return weaponService.create(weapon);
     }
+    @PostMapping("/dto")
+    public Weapon insert(@RequestBody WeaponCreateRequest request) {
+        return weaponService.create(request);
+    }
 
     @PutMapping
     public Weapon edit(@RequestBody Weapon weapon) {
         return weaponService.update(weapon);
+    }
+    @PutMapping("/dto")
+    public Weapon edit(@RequestBody WeaponUpdateRequest request) {
+        return weaponService.update(request);
     }
 
     @DeleteMapping("{id}")
