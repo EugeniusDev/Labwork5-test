@@ -13,4 +13,5 @@ import org.springframework.stereotype.Repository;
 */
 @Repository
 public interface WeaponRepository extends MongoRepository<Weapon, String> {
+    public boolean existsByCode(String code);
 }

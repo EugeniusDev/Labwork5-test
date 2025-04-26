@@ -57,6 +57,9 @@ public class WeaponService {
     public Weapon create(Weapon weapon) { return weaponRepository.save(weapon); }
     public Weapon update(Weapon weapon) { return weaponRepository.save(weapon); }
     public Weapon create(WeaponCreateRequest request) {
+        if (weaponRepository.existsByCode(request.code())) {
+            return null;
+        }
         Weapon item = mapToWeapon(request);
         item.setCreateDate(LocalDateTime.now());
         item.setUpdateDates(new ArrayList<LocalDateTime>());
